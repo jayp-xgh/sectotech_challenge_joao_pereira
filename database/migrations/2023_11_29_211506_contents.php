@@ -10,12 +10,12 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('playlist_id');
-            $table->string('title', 150)->nullable();
-            $table->string('url', 255)->nullable();
-            $table->string('author', 150);
+            $table->integer('playlist_id')->unsigned();
+            $table->foreign('playlist_id')->references('id')->on('playlists');
+            $table->string('title', 150);
+            $table->string('url', 255);
+            $table->string('author', 150)->nullable();
             $table->timestamps();
-            $table->foreign('playlist_id')->references('id')->on('playlist');
         });
     }
 

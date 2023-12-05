@@ -8,17 +8,17 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('playlist', function (Blueprint $table) {
+        Schema::create('playlists', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100)->nullable();
-            $table->string('description', 200);
-            $table->string('author', 150)->nullable();
+            $table->string('title', 100);
+            $table->string('description', 200)->nullable();
+            $table->string('author', 150);
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('playlist');
+        Schema::dropIfExists('playlists');
     }
 };
