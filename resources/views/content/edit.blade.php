@@ -16,7 +16,7 @@
         @endif
     </div>
 
-    <form method="post" action="{{ route('content.update', ['playlistId' => $content->id]) }}">
+    <form method="post" action="{{ route('content.update', ['content' => $content->id]) }}">
         @csrf
         @method('put')
 
@@ -40,7 +40,5 @@
 
         <button type="submit">save</button>
     </form>
-
-  
 </body>
 </html>

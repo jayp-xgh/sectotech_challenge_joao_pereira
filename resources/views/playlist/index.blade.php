@@ -46,7 +46,13 @@
                             </form>
                         </td>
                         <td>
-                            <a href="{{ route('content.show', ['playlistId' => $playlist->id]) }}"><button>Content</button></a>
+                            @if ($playlist->content)
+                            <a href="{{ route('content.show', ['playlist' => $playlist->id]) }}">
+                                <button>View Contents</button>
+                            </a>
+                            @else
+                                <button disabled>No Content</button>
+                            @endif  
                         </td>
                     </tr>
                 @endforeach
