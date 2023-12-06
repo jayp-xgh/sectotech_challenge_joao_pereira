@@ -61,6 +61,7 @@ class PlaylistController extends Controller
     {
         Content::where('playlist_id', $playlist->id)->delete();
         Playlist::destroy($playlist->id);
+        return redirect()->route('playlist.index');
     }
 
 }

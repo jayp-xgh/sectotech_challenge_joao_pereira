@@ -16,9 +16,9 @@ Route::put('/playlist/update/{playlist}', [PlaylistController::class, 'update'])
 Route::delete('/playlist/destroy/{playlist}', [PlaylistController::class, 'destroy'])->name('playlist.destroy');
 
 
-Route::get('/content/show/{playlistId}', [ContentController::class, 'show'])->name('content.show');
+Route::get('/content/show/{playlist}', [ContentController::class, 'show'])->name('content.show');
 Route::get('/content/create', [ContentController::class, 'create'])->name('content.create');
 Route::post('/content/store', [ContentController::class, 'store'])->name('content.store');
 Route::get('/content/edit/{content}', [ContentController::class, 'edit'])->name('content.edit');
-Route::put('/content/update/{playlistId}', [ContentController::class, 'update'])->name('content.update');
+Route::put('/content/update/{content}', [ContentController::class, 'update'])->name('content.update');
 Route::delete('/content/destroy/{content}', [ContentController::class, 'destroy'])->name('content.destroy');
