@@ -61,8 +61,7 @@ class ContentController extends Controller
 
     public function destroy(Content $content)
     {
-        $playlistId = $content->playlist_id;
         $content->delete();
-        return redirect(route("content.show", ['playlistId' => $playlistId]))->with('success', "Content {$content->title} deleted successfully!");
+        return redirect()->route('content.show', ['playlist' => $content->playlist_id])->with('success', "Content {$content->title} deleted successfully!");
     }
 }
